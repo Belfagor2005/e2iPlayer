@@ -49,7 +49,7 @@ def Plugins(**kwargs):
         try:
             list.append(PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=sessionstart, needsRestart=False)) # activating IPTV web interface
         except Exception:
-            print "IPTVplayer Exception appending PluginDescriptor.WHERE_SESSIONSTART descriptor."
+            print("IPTVplayer Exception appending PluginDescriptor.WHERE_SESSIONSTART descriptor.")
     return list
 
 
@@ -160,5 +160,5 @@ def sessionstart(reason, **kwargs):
     if reason == 0 and 'session' in kwargs:
         try:
             import Plugins.Extensions.IPTVPlayer.Web.initiator
-        except Exception, e:
-            print "EXCEPTION initiating IPTVplayer WebComponent:", str(e)
+        except Exception as e:
+            print("EXCEPTION initiating IPTVplayer WebComponent:", str(e))
